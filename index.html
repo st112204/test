@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://st112204.github.io/proga/ -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>160 Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #1e1e1e; /* Тёмный фон */
+            color: #d4d4d4; /* Светлый текст */
+            margin: 0;
+            padding: 2rem 1rem; /* Отступы сверху/снизу и слева/справа */
+        }
+
+        .block {
+            margin-bottom: 2rem; /* Отступ между блоками вопрос-ответ */
+        }
+
+        .question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #569cd6; /* Цвет для вопросов */
+            margin-left: 2rem; /* Отступ для вопросов */
+        }
+
+        .answer {
+            margin-left: 2rem; /* Общий отступ для текста ответа */
+        }
+
+            .answer p {
+                margin: 0; /* Убираем лишние отступы у текста внутри ответа */
+            }
+
+        .inline-code {
+            font-family: monospace;
+            background-color: #2d2d2d; /* Тёмный фон для inline-кода */
+            padding: 2px 4px;
+            border-radius: 3px;
+            border: 1px solid #3c3c3c;
+            color: #dcdcaa; /* Цвет для inline-кода в стиле Visual Studio */
+        }
+
+        .code-block {
+            font-family: monospace;
+            background-color: #2d2d2d; /* Тёмный фон для блока кода */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #3c3c3c;
+            margin: 1rem 0; /* Отступы сверху и снизу блока кода */
+            overflow-x: auto;
+            color: #d4d4d4; /* Цвет текста в блоке */
+        }
+
+            .code-block .keyword {
+                color: #569cd6; /* Цвет для ключевых слов */
+            }
+
+            .code-block .type {
+                color: #4ec9b0; /* Цвет для типов данных */
+            }
+
+            .code-block .variable {
+                color: #9cdcfe; /* Цвет для переменных */
+            }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 1rem; /* Уменьшенные отступы для планшетов */
+            }
+
+            .block {
+                margin-bottom: 1.5rem; /* Меньший отступ между блоками */
+            }
+
+            .question,
+            .answer {
+                margin-left: 1.5rem; /* Уменьшенный отступ для вопросов и ответов */
+            }
+
+            .code-block {
+                padding: 8px; /* Уменьшенные отступы внутри блока кода */
+                font-size: 14px; /* Уменьшенный размер шрифта для кода */
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.5rem; /* Ещё меньшие отступы для узких экранов */
+            }
+
+            .block {
+                margin-bottom: 1rem; /* Ещё меньший отступ между блоками */
+            }
+
+            .question,
+            .answer {
+                margin-left: 1rem; /* Ещё меньший отступ для вопросов и ответов */
+            }
+
+            .code-block {
+                font-size: 12px; /* Ещё меньший размер шрифта для кода */
+            }
+        }
+    </style>
+</head>
+                <body>
+                    <!-- Начало блока вопросов и ответов -->
+
+
+                    <div class="block">
+                        <div class="question">1. Что такое маленький объект?</div>
+                        <div class="answer">
+                            Маленький объект хранит всю свою информацию в памяти, выделенной автоматически.
+                            <div class="code-block">
+                                struct Frac { int n, d; };<br>
+                                Frac x;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">2. Что такое большой объект?</div>
+                        <div class="answer">
+                            Большой объект содержит указатели на свои части, находящиеся за пределами памяти объекта.
+                            <div class="code-block">
+                                struct Vector { int s, *d; };<br>
+                                Vector v;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">3. Чем большой объект отличается от маленького?</div>
+                        <div class="answer">
+                            Большой объект имеет динамически выделяемые части памяти, а маленький — нет.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">4. Что такое часть объекта?</div>
+                        <div class="answer">
+                            Это данные, на которые ссылается объект и которые должны исчезнуть вместе с ним.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">5. Что такое хозяин динамического объекта?</div>
+                        <div class="answer">
+                            Объект, который управляет временем жизни своих частей.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">6. Как называются динамические объекты, не имеющие хозяина?</div>
+                        <div class="answer">
+                            Бесхозные.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">7. Сколько хозяев может быть у одного объекта?</div>
+                        <div class="answer">
+                            Только один.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">8. Приведите пример маленького объекта.</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Complex { double r, i; };<br>
+                                Complex z;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">9. Приведите пример большого объекта.</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Vector { int s, *d; };<br>
+                                Vector v;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">10. Зачем нужен деструктор объекта?</div>
+                        <div class="answer">
+                            Для освобождения ресурсов, связанных с объектом.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">11. Для каких объектов годится деструктор, построенный автоматически?</div>
+                        <div class="answer">
+                            Для объектов, не использующих динамическую память или ресурсы.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">12. Как сделать так, чтобы деструктор по умолчанию в классе был построен автоматически?</div>
+                        <div class="answer">
+                            Использовать <span class="inline-code">~Класс() = default;</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">13. Для каких объектов годится быстрое копирование при помощи функции memcpy?</div>
+                        <div class="answer">
+                            Для объектов без динамической памяти и указателей.
+                            <div class="code-block">
+                                struct Frac { int n, d; };<br>
+                                Frac a1[100], a2[100];<br>
+                                memcpy(a1, a2, sizeof(a1));
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">14. Как устроен деструктор связного списка, если деструктор узла удаляет только его?</div>
+                        <div class="answer">
+                            Удаляет все узлы рекурсивно.
+                            <div class="code-block">
+                                void del(Node*&amp; h) {<br>
+                                &nbsp;&nbsp;if (!h) return;<br>
+                                &nbsp;&nbsp;del(h-&gt;n);<br>
+                                &nbsp;&nbsp;delete h;<br>
+                                &nbsp;&nbsp;h = nullptr;<br>
+                                }<br>
+                                struct List { Node* h; ~List() { del(h); } };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">15. Как устроен деструктор связного списка, если деструктор узла удаляет весь хвост?</div>
+                        <div class="answer">
+                            Каждый узел удаляет следующий узел в деструкторе.
+                            <div class="code-block">
+                                struct Node {<br>
+                                &nbsp;&nbsp;int d;<br>
+                                &nbsp;&nbsp;Node* n;<br>
+                                &nbsp;&nbsp;~Node() { delete n; }<br>
+                                };<br>
+                                struct List { Node* h; ~List() { delete h; } };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">16. Как называется конструктор с одним параметром?</div>
+                        <div class="answer">
+                            Конструктор преобразования.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">17. Для чего нужен конструктор с одним параметром?</div>
+                        <div class="answer">
+                            Для автоматического преобразования типа в объект класса.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">18. Как устроен конструктор дроби?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Frac {<br>
+                                &nbsp;&nbsp;int n, d;<br>
+                                &nbsp;&nbsp;Frac(int nn = 0, int dd = 1) : n(nn), d(dd) {}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">19. Как устроен конструктор обычного комплексного числа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Complex {<br>
+                                &nbsp;&nbsp;double r, i;<br>
+                                &nbsp;&nbsp;Complex(double rr = 0, double ii = 0) : r(rr), i(ii) {}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">20. Как устроен конструктор дурацкого комплексного числа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Comp {<br>
+                                &nbsp;&nbsp;double r, *i;<br>
+                                &nbsp;&nbsp;Comp(double rr = 0, double ii = 0) : r(rr), i(new double(ii)) {}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">21. Как устроен конструктор связного списка по заданному числу узлов?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                Node* genList(int n) {<br>
+                                &nbsp;&nbsp;if (n == 0) return nullptr;<br>
+                                &nbsp;&nbsp;return new Node(0, genList(n - 1));<br>
+                                }<br>
+                                struct List {<br>
+                                &nbsp;&nbsp;Node* h;<br>
+                                &nbsp;&nbsp;List(int n) : h(genList(n)) {}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">22. Как устроен конструктор нулевого вектора по заданному числу координат?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Vector {<br>
+                                &nbsp;&nbsp;int s;<br>
+                                &nbsp;&nbsp;double* d;<br>
+                                &nbsp;&nbsp;Vector(int size) : s(size), d(new double[s]) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; s; ++i) d[i] = 0;<br>
+                                &nbsp;&nbsp;}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">23. Что такое конструктор копирования?</div>
+                        <div class="answer">
+                            Это конструктор, который создает новый объект на основе существующего.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">24. Когда используется конструктор копирования?</div>
+                        <div class="answer">
+                            Когда объект передается по значению, возвращается из функции или инициализируется другим объектом.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">25. Как указать компилятору, чтобы он создал конструктор копирования автоматически?</div>
+                        <div class="answer">
+                            Использовать <span class="inline-code">Класс(const Класс&) = default;</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">26. Как реализуется конструктор копирования дроби?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Frac {<br>
+                                &nbsp;&nbsp;int n, d;<br>
+                                &nbsp;&nbsp;Frac(const Frac &A) : n(A.n), d(A.d) {}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">27. Как реализуется конструктор копирования обычного комплексного числа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Complex {<br>
+                                &nbsp;&nbsp;double r, i;<br>
+                                &nbsp;&nbsp;Complex(const Complex &C) = default;<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">28. Как реализуется конструктор копирования дурацкого комплексного числа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Comp {<br>
+                                &nbsp;&nbsp;double r, *i;<br>
+                                &nbsp;&nbsp;Comp(const Comp &C) : r(C.r), i(new double(*C.i)) {}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">29. Как реализуется конструктор копирования вектора?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Vector {<br>
+                                &nbsp;&nbsp;int s;<br>
+                                &nbsp;&nbsp;double* d;<br>
+                                &nbsp;&nbsp;Vector(const Vector&amp; V) : s(V.s), d(new double[s]) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; s; ++i) d[i] = V.d[i];<br>
+                                &nbsp;&nbsp;}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">30. Как реализуется конструктор копирования связного списка?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                Node* copy(Node* hh) {<br>
+                                &nbsp;&nbsp;if (!hh) return nullptr;<br>
+                                &nbsp;&nbsp;return new Node(hh-&gt;d, copy(hh-&gt;n));<br>
+                                }<br>
+                                struct List {<br>
+                                &nbsp;&nbsp;Node* h;<br>
+                                &nbsp;&nbsp;List(const List&amp; L) : h(copy(L.h)) {}<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">31. Что такое L-value?</div>
+                        <div class="answer">
+                            L-value — это выражение, которое может стоять слева от оператора присваивания.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">32. Что такое R-value?</div>
+                        <div class="answer">
+                            R-value — это временное значение, которое не имеет имени и не может быть изменено напрямую.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">33. Что такое конструктор перемещения?</div>
+                        <div class="answer">
+                            Конструктор, который перемещает ресурсы из временного объекта в новый.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">34. Когда используется конструктор перемещения?</div>
+                        <div class="answer">
+                            Когда объект инициализируется временным объектом (например, <span class="inline-code">std::move</span>).
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">35. Как выглядит конструктор перемещения обычного комплексного числа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Complex {<br>
+                                &nbsp;&nbsp;double r, i;<br>
+                                &nbsp;&nbsp;Complex(Complex&amp;&amp; C) = default;<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">36. Как выглядит конструктор перемещения дурацкого комплексного числа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Comp {<br>
+                                &nbsp;&nbsp;double r, *i;<br>
+                                &nbsp;&nbsp;Comp(Comp&amp;&amp; C) : r(C.r), i(C.i) { C.i = nullptr; }<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">37. Как выглядит конструктор перемещения вектора?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Vector {<br>
+                                &nbsp;&nbsp;int s;<br>
+                                &nbsp;&nbsp;double* d;<br>
+                                &nbsp;&nbsp;Vector(Vector&amp;&amp; V) : s(V.s), d(V.d) { V.d = nullptr; }<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">38. Как выглядит конструктор перемещения связного списка?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct List {<br>
+                                &nbsp;&nbsp;Node* h;<br>
+                                &nbsp;&nbsp;List(List&amp;&amp; L) : h(L.h) { L.h = nullptr; }<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">39. Для чего нужен конструктор перемещения?</div>
+                        <div class="answer">
+                            Для оптимизации операций с временными объектами и предотвращения лишнего копирования.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">40. Как указать компилятору на то, что содержимое локальной переменной нам больше не нужно?</div>
+                        <div class="answer">
+                            Использовать <span class="inline-code">std::move</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">41. Как заставить компилятор использовать конструктор перемещения вместо конструктора копирования?</div>
+                        <div class="answer">
+                            Передать временный объект или использовать <span class="inline-code">std::move</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">42. Чем конструктор копирования отличается от операции присваивания?</div>
+                        <div class="answer">
+                            Конструктор копирования создает новый объект, в то время как операция присваивания изменяет уже существующий объект.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">43. Как заставить компилятор строить операцию присваивания автоматически?</div>
+                        <div class="answer">
+                            Использовать <span class="inline-code">Класс &amp; operator=(const Класс&amp;) = default;</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">44. Когда нужно реализовывать конструктор копирования, операцию присваивания и деструктор вручную?</div>
+                        <div class="answer">
+                            Когда класс управляет динамическими ресурсами, например, выделяет память или открывает файлы.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">45. Как выглядит копирующая операция присваивания для дурацких комплексных чисел?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                Comp&amp; Comp::operator=(const Comp&amp; c) {<br>
+                                &nbsp;&nbsp;r = c.r;<br>
+                                &nbsp;&nbsp;*i = *c.i;<br>
+                                &nbsp;&nbsp;return *this;<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">46. Как выглядит копирующая операция присваивания для векторов?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                Vector&amp; Vector::operator=(const Vector&amp; V) {<br>
+                                &nbsp;&nbsp;if (this == &amp;V) return *this;<br>
+                                &nbsp;&nbsp;delete[] d;<br>
+                                &nbsp;&nbsp;s = V.s;<br>
+                                &nbsp;&nbsp;d = new double[s];<br>
+                                &nbsp;&nbsp;for (int i = 0; i &lt; s; ++i) d[i] = V.d[i];<br>
+                                &nbsp;&nbsp;return *this;<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">47. Как выглядит копирующая операция присваивания для связных списков?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                List&amp; List::operator=(const List&amp; L) {<br>
+                                &nbsp;&nbsp;if (this == &amp;L) return *this;<br>
+                                &nbsp;&nbsp;Node* temp = copy(L.h);<br>
+                                &nbsp;&nbsp;del(h);<br>
+                                &nbsp;&nbsp;h = temp;<br>
+                                &nbsp;&nbsp;return *this;<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">48. Как выглядит перемещающая операция присваивания для дурацких комплексных чисел?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                Comp&amp; Comp::operator=(Comp&amp;&amp; c) {<br>
+                                &nbsp;&nbsp;r = c.r;<br>
+                                &nbsp;&nbsp;delete i;<br>
+                                &nbsp;&nbsp;i = c.i;<br>
+                                &nbsp;&nbsp;c.i = nullptr;<br>
+                                &nbsp;&nbsp;return *this;<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">49. Как выглядит перемещающая операция присваивания для векторов?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                Vector&amp; Vector::operator=(Vector&amp;&amp; V) {<br>
+                                &nbsp;&nbsp;s = V.s;<br>
+                                &nbsp;&nbsp;std::swap(d, V.d);<br>
+                                &nbsp;&nbsp;V.d = nullptr;<br>
+                                &nbsp;&nbsp;return *this;<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">50. Как выглядит перемещающая операция присваивания для связных списков?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                List&amp; List::operator=(List&amp;&amp; L) {<br>
+                                &nbsp;&nbsp;std::swap(h, L.h);<br>
+                                &nbsp;&nbsp;return *this;<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">51. Что такое умный указатель?</div>
+                        <div class="answer">
+                            Это указатель, который управляет временем жизни объекта, на который он указывает, автоматически освобождая память.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">52. Зачем нужен умный указатель?</div>
+                        <div class="answer">
+                            Для автоматического управления памятью и предотвращения утечек памяти.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">53. Как выглядит глупый умный указатель?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct TimePtr {<br>
+                                &nbsp;&nbsp;Time* p;<br>
+                                &nbsp;&nbsp;TimePtr(Time* pp = nullptr) : p(pp) {}<br>
+                                &nbsp;&nbsp;~TimePtr() { delete p; }<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">54. Чем глупый умный указатель лучше обычного?</div>
+                        <div class="answer">
+                            Он автоматически управляет временем жизни объекта, но не проверяет его состояние.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">55. Как выглядит умный умный указатель?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct TimePtr {<br>
+                                &nbsp;&nbsp;Time* p;<br>
+                                &nbsp;&nbsp;TimePtr(Time* pp = nullptr) : p(pp) {}<br>
+                                &nbsp;&nbsp;~TimePtr() { if (p) delete p; }<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">56. Чем умный умный указатель лучше глупого умного указателя?</div>
+                        <div class="answer">
+                            Он проверяет состояние указателя перед удалением, избегая возможных ошибок.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">57. Чем перегрузка префиксного инкремента отличается от перегрузки постфиксного (2 пункта)?</div>
+                        <div class="answer">
+                            Префиксный инкремент используется как <span class="inline-code">++a</span>, постфиксный — как <span class="inline-code">a++</span>.<br>
+                            Префиксный инкремент увеличивает значение переменной и возвращает её.<br>
+                            Постфиксный инкремент возвращает старое значение и затем увеличивает переменную.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">58. Как компилятор понимает выражение p-&gt;v?</div>
+                        <div class="answer">
+                            Компилятор использует оператор <span class="inline-code">-&gt;</span>, который обращается к полю или методу объекта, на который указывает указатель.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">59. Как выглядит перегрузка операции преобразования типа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Frac {<br>
+                                &nbsp;&nbsp;int n, d;<br>
+                                &nbsp;&nbsp;operator double() const { return double(n) / d; }<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">60. Как выглядит перегрузка операции -&gt;?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct TimePtr {<br>
+                                &nbsp;&nbsp;Time* p;<br>
+                                &nbsp;&nbsp;Time* operator-&gt;() { return p; }<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">61. Какую задачу решают исключения?</div>
+                        <div class="answer">
+                            Исключения позволяют обрабатывать ошибки, возникающие во время выполнения программы, и передавать информацию о них в вышестоящие функции.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">62. Самый простой способ решения задачи об информировании вышестоящих функций об ошибках, возникающих в выражениях.</div>
+                        <div class="answer">
+                            Использование возвращаемого кода ошибки или исключений.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">63. Что такое NaN?</div>
+                        <div class="answer">
+                            NaN (Not-a-Number) — это специальное значение, обозначающее результат некорректной арифметической операции.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">64. Каковы правила вычислений с NaN?</div>
+                        <div class="answer">
+                            Любая операция с NaN возвращает NaN. Например, <span class="inline-code">NaN + 1</span> или <span class="inline-code">sqrt(NaN)</span> также дают NaN.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">65. Как можно использовать глобальные переменные для решения задачи об информировании вышестоящих функций об ошибках?</div>
+                        <div class="answer">
+                            Можно хранить код ошибки в глобальной переменной и проверять её в разных частях программы.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">66. Как можно использовать результаты функций для решения задачи об информировании вышестоящих функций об ошибках?</div>
+                        <div class="answer">
+                            Возвращать код ошибки или использовать исключения для информирования о возникших ошибках.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">67. Как можно использовать объекты исключений одинакового типа для решения задачи об информировании вышестоящих функций об ошибках?</div>
+                        <div class="answer">
+                            Использовать один тип исключения для всех ошибок в программе и передавать его в вышестоящие функции.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">68. Как можно использовать объекты исключений разных типов (без полей) для решения задачи об информировании вышестоящих функций об ошибках?</div>
+                        <div class="answer">
+                            Каждый тип исключения будет указывать на определённую ошибку, и обработка будет в зависимости от типа исключения.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">69. Как можно использовать объекты исключений разных типов (с полями) для решения задачи об информировании вышестоящих функций об ошибках?</div>
+                        <div class="answer">
+                            Объекты исключений могут содержать информацию о параметре ошибки, например, числовые значения или сообщения.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">70. Что такое enum class и чем он отличается от просто enum?</div>
+                        <div class="answer">
+                            <span class="inline-code">enum class</span> является типобезопасным, то есть значения нельзя неявно преобразовывать в целые числа, в отличие от обычного <span class="inline-code">enum</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">71. Как используются константы типа enum class?</div>
+                        <div class="answer">
+                            Константы типа <span class="inline-code">enum class</span> используются с явным указанием типа, например, <span class="inline-code">ErrorCode::E_OK</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">72. Что такое принцип инкапсуляции?</div>
+                        <div class="answer">
+                            Принцип инкапсуляции заключается в сокрытии внутренней реализации объекта и предоставлении доступа к нему только через публичные методы.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">73. Для чего нужно следовать принципу инкапсуляции при проектировании и реализации классов?</div>
+                        <div class="answer">
+                            Чтобы обеспечить защиту данных и скрыть детали реализации, делая интерфейс объекта более чистым и удобным.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">74. Что такое инвариант класса?</div>
+                        <div class="answer">
+                            Это условие, которое должно быть истинным для любого объекта класса в любой момент времени.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">75. Почему важно позволить инварианту класса нарушаться во время работы методов?</div>
+                        <div class="answer">
+                            Инвариант может нарушаться в процессе работы методов, но важным является восстановление его после выполнения метода.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">76. Как скрыть некоторые поля и методы?</div>
+                        <div class="answer">
+                            Использовать модификаторы доступа <span class="inline-code">private:</span> или <span class="inline-code">protected:</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">77. Как сделать некоторые поля и методы открытыми?</div>
+                        <div class="answer">
+                            Использовать модификатор <span class="inline-code">public:</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">78. Чем struct отличается от class?</div>
+                        <div class="answer">
+                            В <span class="inline-code">struct</span> члены по умолчанию имеют доступ <span class="inline-code">public:</span>, а в <span class="inline-code">class</span> — <span class="inline-code">private:</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">79. Что такое дружественные функции?</div>
+                        <div class="answer">
+                            Дружественные функции имеют доступ к закрытым и защищённым членам класса, но не являются его методами.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">80. Что такое дружественные классы?</div>
+                        <div class="answer">
+                            Дружественные классы имеют доступ к закрытым и защищённым членам другого класса, как если бы они были его методами.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">81. Как сделать функцию другом?</div>
+                        <div class="answer">
+                            Использовать ключевое слово <span class="inline-code">friend</span> перед определением функции в классе.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">82. Как сделать класс другом?</div>
+                        <div class="answer">
+                            Использовать ключевое слово <span class="inline-code">friend class</span> перед определением класса.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">83. Для чего нужны дружественные функции?</div>
+                        <div class="answer">
+                            Для доступа к внутренним данным и методам класса, если это необходимо внешнему коду.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">84. Для чего нужны дружественные классы?</div>
+                        <div class="answer">
+                            Для организации тесной работы между классами, где один класс должен иметь доступ к закрытым данным другого.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">85. Бывает ли неявная дружба (если A друг B, то автоматически B друг A)?</div>
+                        <div class="answer">
+                            Нет, дружба в C++ всегда явная.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">86. Что такое константный объект?</div>
+                        <div class="answer">
+                            Константный объект — это объект, поля которого нельзя изменять после инициализации.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">87. Какие методы можно вызывать у константного объекта?</div>
+                        <div class="answer">
+                            Можно вызывать только константные методы, которые не изменяют состояние объекта.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">88. Что такое константный метод?</div>
+                        <div class="answer">
+                            Константный метод — это метод, который не изменяет состояние объекта и помечен ключевым словом <span class="inline-code">const</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">89. Зачем нужно определять некоторые объекты как константные?</div>
+                        <div class="answer">
+                            Чтобы гарантировать, что их состояние не будет изменено, и защитить их от нежелательных изменений.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">90. Как перегружать методы для обычных и константных объектов?</div>
+                        <div class="answer">
+                            Можно создать два метода с одинаковым именем, но один из них будет помечен как <span class="inline-code">const</span>, а второй — нет.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">91. Какую задачу решает указатель?</div>
+                        <div class="answer">
+                            Указатель позволяет хранить адрес объекта в памяти и работать с ним.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">92. Что такое итератор?</div>
+                        <div class="answer">
+                            Итератор — это объект, который позволяет последовательно обходить элементы контейнера.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">93. Что такое фиктивный элемент контейнера?</div>
+                        <div class="answer">
+                            Фиктивный элемент — это специальный элемент, который используется для завершения контейнера, например, <span class="inline-code">nullptr</span> в списках.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">94. Где в контейнере расположен фиктивный элемент?</div>
+                        <div class="answer">
+                            Обычно фиктивный элемент располагается после последнего действительного элемента контейнера, например, в конце списка.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">95. Зачем нужен фиктивный элемент контейнера?</div>
+                        <div class="answer">
+                            Он используется для упрощения работы с контейнером, чтобы избежать проверок на пустоту или завершение контейнера.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">96. Как объявить поле класса, которое можно менять даже у константных объектов?</div>
+                        <div class="answer">
+                            Использовать ключевое слово <span class="inline-code">mutable</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">97. Как избавиться от признака const?</div>
+                        <div class="answer">
+                            Использовать <span class="inline-code">const_cast</span> для удаления <span class="inline-code">const</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">98. Зачем могут понадобиться поля, которые можно менять даже у константных объектов?</div>
+                        <div class="answer">
+                            Для реализации кэширования или других состояний, которые не должны изменять внешний вид объекта.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">99. Что такое объединения?</div>
+                        <div class="answer">
+                            Объединение — это тип данных, в котором все поля используют одну и ту же область памяти.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">100. Какие бывают объединения?</div>
+                        <div class="answer">
+                            Именованные и безымянные.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">101. Что определяют именованные объединения?</div>
+                        <div class="answer">
+                            Именованные объединения определяют набор данных с именем, где все поля используют одну и ту же память.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">102. Что определяют безымянные объединения?</div>
+                        <div class="answer">
+                            Безымянные объединения используются без имени и могут быть использованы в других структурах или функциях.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">103. Где можно использовать безымянные объединения?</div>
+                        <div class="answer">
+                            Они могут использоваться в структурах или локальных переменных для экономии памяти.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">104. Для чего нужны объединения (3 пункта)?</div>
+                        <div class="answer">
+                            Экономия памяти.<br>
+                            Преобразование типов данных, сохраняя битовое представление.<br>
+                            Полиморфизм.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">105. Что такое полиморфизм?</div>
+                        <div class="answer">
+                            Полиморфизм — это способность объекта работать с разными типами данных или методов, благодаря единому интерфейсу.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">106. Как выглядит полиморфная структура Number, которая может хранить как целые, так и вещественные числа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                struct Number {<br>
+                                &nbsp;&nbsp;virtual ~Number() = default;<br>
+                                &nbsp;&nbsp;virtual void print() const = 0;<br>
+                                };<br>
+                                struct Integer : Number {<br>
+                                &nbsp;&nbsp;int value;<br>
+                                &nbsp;&nbsp;void print() const override { std::cout &lt;&lt; value; }<br>
+                                };<br>
+                                struct Double : Number {<br>
+                                &nbsp;&nbsp;double value;<br>
+                                &nbsp;&nbsp;void print() const override { std::cout &lt;&lt; value; }<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">107. Как выглядит операция сложения для полиморфной структуры Number, которая может хранить как целые, так и вещественные числа?</div>
+                        <div class="answer">
+                            Создаётся отдельная функция, которая обрабатывает сложение, проверяя типы:
+                            <div class="code-block">
+                                Number* add(const Number&amp; a, const Number&amp; b);
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">108. Какую задачу решают шаблоны функций?</div>
+                        <div class="answer">
+                            Они позволяют создавать универсальный код, работающий с разными типами данных.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">109. Как определить шаблон функции?</div>
+                        <div class="answer">
+                            Использовать ключевое слово <span class="inline-code">template</span>:
+                            <div class="code-block">
+                                template &lt;typename T&gt;<br>
+                                T max(T a, T b) { return a &gt; b ? a : b; }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">110. Чем могут быть шаблонные параметры?</div>
+                        <div class="answer">
+                            Типами данных (<span class="inline-code">typename</span>), значениями (например, <span class="inline-code">int</span>), указателями и ссылками.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">111. Какие выражения могут использоваться в качестве шаблонного параметра типа int?</div>
+                        <div class="answer">
+                            Целые числа, константы, перечисления, указатели или ссылки.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">112. Чем могут быть шаблонные параметры "типа" class?</div>
+                        <div class="answer">
+                            Могут быть как базовыми, так и пользовательскими типами.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">113. Как можно указать явно значения шаблонных параметров для шаблонной функции?</div>
+                        <div class="answer">
+                            Передать их в угловых скобках при вызове:
+                            <div class="code-block">
+                                max&lt;int&gt;(1, 2);
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">114. В каких случаях можно воспользоваться автоматическим определением шаблонных параметров для шаблонной функции?</div>
+                        <div class="answer">
+                            Когда типы аргументов можно вывести из переданных параметров функции.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">115. Как можно явно заставить компилятор построить экземпляр шаблонной функции для определённых значений шаблонных параметров?</div>
+                        <div class="answer">
+                            Вызвать шаблонную функцию с конкретными типами или использовать <span class="inline-code">template instantiation</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">116. Типы с параметрами в C.</div>
+                        <div class="answer">
+                            Симуляция через использование структур и указателей на функции.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">117. Как выглядит тип с параметрами в C на примере связного списка?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                typedef struct Node {<br>
+                                &nbsp;&nbsp;void* data;<br>
+                                &nbsp;&nbsp;struct Node* next;<br>
+                                } Node;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">118. Как выглядит тип с параметрами в C++ (шаблонный) на примере связного списка?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                template &lt;typename T&gt;<br>
+                                struct Node {<br>
+                                &nbsp;&nbsp;T data;<br>
+                                &nbsp;&nbsp;Node* next;<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">119. Что такое обобщённое программирование?</div>
+                        <div class="answer">
+                            Стиль программирования, позволяющий писать универсальный код для работы с разными типами данных.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">120. Когда и зачем используется ключевое слово typename?</div>
+                        <div class="answer">
+                            Когда требуется явно указать, что идентификатор является типом в шаблоне.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">121. Как выглядит функция вывода на экран содержимого вектора из целых чисел?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                void print(const std::vector&lt;int&gt;&amp; v) {<br>
+                                &nbsp;&nbsp;for (int x : v) std::cout &lt;&lt; x &lt;&lt; ' ';<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">122. Как выглядит функция вывода на экран содержимого вектора из элементов любого типа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                template &lt;typename T&gt;<br>
+                                void print(const std::vector&lt;T&gt;&amp; v) {<br>
+                                &nbsp;&nbsp;for (const T&amp; x : v) std::cout &lt;&lt; x &lt;&lt; ' ';<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">123. Как выглядит функция вывода на экран содержимого любого контейнера из элементов любого типа?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                template &lt;typename C&gt;<br>
+                                void print(const C&amp; c) {<br>
+                                &nbsp;&nbsp;for (const auto&amp; x : c) std::cout &lt;&lt; x &lt;&lt; ' ';<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">124. Зачем нужна перегрузка операций в обобщённом программировании?</div>
+                        <div class="answer">
+                            Для создания удобных и интуитивно понятных интерфейсов работы с объектами.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">125. Зачем нужны вложенные типы в обобщённом программировании?</div>
+                        <div class="answer">
+                            Для определения зависимостей внутри классов, например, итераторов.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">126. Что такое программирование на этапе компиляции?</div>
+                        <div class="answer">
+                            Это выполнение вычислений и проверок на этапе компиляции, чтобы ускорить выполнение программы.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">127. Зачем нужно программирование на этапе компиляции?</div>
+                        <div class="answer">
+                            Для оптимизации, проверки ошибок и уменьшения времени выполнения программы.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">128. Как выглядело программирование на этапе компиляции до изобретения constexpr (на примере чисел Фибоначчи)?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                template &lt;int N&gt; struct Fibonacci {<br>
+                                &nbsp;&nbsp;static const int value = Fibonacci&lt;N - 1&gt;::value + Fibonacci&lt;N - 2&gt;::value;<br>
+                                };<br>
+                                template &lt;&gt; struct Fibonacci&lt;0&gt; { static const int value = 0; };<br>
+                                template &lt;&gt; struct Fibonacci&lt;1&gt; { static const int value = 1; };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">129. Как выглядит программирование на этапе компиляции после изобретения constexpr (на примере чисел Фибоначчи)?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                constexpr int fibonacci(int n) {<br>
+                                &nbsp;&nbsp;return (n &lt;= 1) ? n : fibonacci(n - 1) + fibonacci(n - 2);<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">130. Что такое методы с дополнительными шаблонными параметрами?</div>
+                        <div class="answer">
+                            Методы, которые принимают дополнительные параметры шаблона, отличные от параметров класса.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">131. Как заполнить вектор начальными элементами, взятыми из массива?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                template &lt;typename T&gt;<br>
+                                void fill(std::vector&lt;T&gt;&amp; v, const T* arr, size_t n) {<br>
+                                &nbsp;&nbsp;v.assign(arr, arr + n);<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">132. Что нужно сделать, чтобы дружественная к шаблонному классу функция тоже была шаблонной?</div>
+                        <div class="answer">
+                            Объявить её как шаблонную внутри класса:
+                            <div class="code-block">
+                                template &lt;typename T&gt; friend void print(const T&amp;);
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">133. Как сделать так, чтобы объекты класса вектор можно было складывать, если у типа элементов есть сложение?</div>
+                        <div class="answer">
+                            Использовать SFINAE или концепты для проверки наличия операции сложения.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">134. Как можно явно заставить компилятор построить экземпляр шаблонного класса для определённых значений шаблонных параметров?</div>
+                        <div class="answer">
+                            Явно указать типы шаблонов при создании объекта:
+                            <div class="code-block">
+                                MyClass&lt;int&gt; obj;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">135. Как описать частный случай для шаблонного класса?</div>
+                        <div class="answer">
+                            Создать специализацию шаблона:
+                            <div class="code-block">
+                                template &lt;&gt; struct MyClass&lt;int&gt; { /* реализация */ };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">136. Какой частный случай берётся, если подходят несколько?</div>
+                        <div class="answer">
+                            Самый конкретный частный случай.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">137. Для чего служит шаблон is_same?</div>
+                        <div class="answer">
+                            Для проверки равенства типов на этапе компиляции.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">138. В каком заголовочном файле описан шаблон is_same?</div>
+                        <div class="answer">
+                            В <span class="inline-code">&lt;type_traits&gt;</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">139. Как реализовать шаблон is_same?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                template &lt;typename T, typename U&gt; struct is_same {<br>
+                                &nbsp;&nbsp;static constexpr bool value = false;<br>
+                                };<br>
+                                template &lt;typename T&gt; struct is_same&lt;T, T&gt; {<br>
+                                &nbsp;&nbsp;static constexpr bool value = true;<br>
+                                };
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">140. Как использовать результат проверки is_same на этапе компиляции?</div>
+                        <div class="answer">
+                            С помощью <span class="inline-code">static_assert</span> или SFINAE:
+                            <div class="code-block">
+                                static_assert(is_same&lt;int, int&gt;::value, "Types must match");
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">141. Как выглядит проверка на равенство типов при помощи is_same для типов R и T?</div>
+                        <div class="answer">
+                            <span class="inline-code">is_same&lt;R, T&gt;::value</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">142. Что такое SFINAE?</div>
+                        <div class="answer">
+                            "Substitution Failure Is Not An Error" — механизм, при котором ошибки подстановки шаблонов не приводят к ошибке компиляции.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">143. Как проверить наличие в классе поля с именем Foo любого типа?</div>
+                        <div class="answer">
+                            С помощью SFINAE:
+                            <div class="code-block">
+                                template &lt;typename T&gt;<br>
+                                auto hasFoo(T*) -&gt; decltype(std::declval&lt;T&gt;().Foo, std::true_type{});
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">144. Как проверить наличие в классе поля с именем Foo определённого типа?</div>
+                        <div class="answer">
+                            Добавить проверку типа поля через <span class="inline-code">decltype</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">145. Как проверить наличие в классе двух полей с именами Foo и Bar одинакового типа (отсутствие обоих годится)?</div>
+                        <div class="answer">
+                            Сравнить их типы через SFINAE или концепты.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">146. Как проверить наличие в классе двух полей с именами Foo и Bar одинакового типа (отсутствие обоих не годится)?</div>
+                        <div class="answer">
+                            Проверить через SFINAE и использовать <span class="inline-code">std::is_same</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">147. Как проверить наличие в классе метода с именем Foo и определённой сигнатурой?</div>
+                        <div class="answer">
+                            С помощью SFINAE и <span class="inline-code">decltype</span> для метода.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">148. Зачем нужны понятия (concept)?</div>
+                        <div class="answer">
+                            Для проверки условий на типы в шаблонах на этапе компиляции.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">149. Как в программе описать понятие?</div>
+                        <div class="answer">
+                            Использовать ключевое слово <span class="inline-code">concept</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">150. Как использовать понятие с одним параметром?</div>
+                        <div class="answer">
+                            В объявлении шаблона:
+                            <div class="code-block">
+                                template &lt;Integral T&gt;<br>
+                                void func(T val);
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">151. Как использовать понятие с несколькими параметрами в объявлении функции?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                template &lt;Addable T, Multiplicable U&gt;<br>
+                                auto operation(T a, U b);
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">152. Как использовать понятие с несколькими параметрами в объявлении класса?</div>
+                        <div class="answer">
+                            <div class="code-block">
+                                template &lt;Comparable T, Hashable U&gt;<br>
+                                class MyClass;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">153. Какой заголовочный файл нужно подключить, чтобы пользоваться понятиями из стандартной библиотеки?</div>
+                        <div class="answer">
+                            <span class="inline-code">&lt;concepts&gt;</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">154. Что такое осьминоги?</div>
+                        <div class="answer">
+                            В программировании осьминоги — это концепция, где объект имеет множество конечностей (указателей), позволяющих ему взаимодействовать с разными частями системы одновременно.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">155. Что такое контейнер?</div>
+                        <div class="answer">
+                            Контейнер — структура данных, позволяющая хранить и управлять коллекцией объектов.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">156. Что такое линейный контейнер?</div>
+                        <div class="answer">
+                            Контейнер, в котором элементы хранятся в линейной последовательности.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">157. Какие имеются линейные контейнеры в стандартной библиотеке?</div>
+                        <div class="answer">
+                            <span class="inline-code">std::vector</span>, <span class="inline-code">std::deque</span>, <span class="inline-code">std::list</span>, <span class="inline-code">std::array</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">158. Что такое ассоциативный контейнер?</div>
+                        <div class="answer">
+                            Контейнер, который упорядочивает элементы на основе ключей.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">159. Какие имеются ассоциативные контейнеры?</div>
+                        <div class="answer">
+                            <span class="inline-code">std::set</span>, <span class="inline-code">std::map</span>, <span class="inline-code">std::multiset</span>, <span class="inline-code">std::multimap</span>.
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="question">160. Что такое итератор?</div>
+                        <div class="answer">
+                            Объект, который предоставляет доступ к элементам контейнера.
+                        </div>
+                    </div>
+
+                    <!-- Конец блока вопросов и ответов -->
+
+
+                </body></html>
